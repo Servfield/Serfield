@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title><![CDATA[你的博客标题]]></title>
+  <link>/</link>
+  <description><![CDATA[一个纯静态、可直接部署到 GitHub Pages 的个人博客模板。]]></description>
+  <language>zh-CN</language>
+  
+  <item>
+    <title><![CDATA[你好，世界：从这里开始]]></title>
+    <link>/p/hello-world/</link>
+    <guid>/p/hello-world/</guid>
+    <pubDate>2026-01-06T00:00:00Z</pubDate>
+    <description><![CDATA[这是你的第一篇文章。这个模板强调排版、阅读体验与速度，适合在 GitHub Pages 上直接发布。]]></description>
+  </item>
+  <item>
+    <title><![CDATA[设计笔记：为什么极简更耐看]]></title>
+    <link>/p/design-notes/</link>
+    <guid>/p/design-notes/</guid>
+    <pubDate>2026-01-06T00:00:00Z</pubDate>
+    <description><![CDATA[聊聊这套模板的设计取向：内容优先、留白与层级、浅/深色模式与可访问性。]]></description>
+  </item>
+</channel>
+</rss>

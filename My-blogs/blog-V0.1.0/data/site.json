@@ -1,0 +1,14 @@
+{
+  "title": "你的博客标题",
+  "tagline": "用极简与细节，认真写作。",
+  "description": "一个纯静态、可直接部署到 GitHub Pages 的个人博客模板。",
+  "author": "你的名字",
+  "baseUrl": "",
+  "language": "zh-CN",
+  "theme": "auto",
+  "social": {
+    "github": "https://github.com/",
+    "x": "",
+    "email": ""
+  }
+}

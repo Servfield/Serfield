@@ -1,0 +1,81 @@
+{
+  "site": {
+    "title": "My Static Blog",
+    "tagline": "极简 · 清爽 · 类 Apple 美学",
+    "baseUrl": "",
+    "language": "zh-CN"
+  },
+  "navLinks": [
+    {
+      "name": "首页",
+      "href": "./index.html"
+    },
+    {
+      "name": "News",
+      "href": "./news.html"
+    },
+    {
+      "name": "博客",
+      "href": "./blog.html"
+    },
+    {
+      "name": "留言板",
+      "href": "./guestbook.html"
+    }
+  ],
+  "quickLinks": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com"
+    },
+    {
+      "name": "Google",
+      "url": "https://www.google.com"
+    },
+    {
+      "name": "Hacker News",
+      "url": "https://news.ycombinator.com"
+    }
+  ],
+  "gemini": {
+    "model": "models/gemini-2.0-flash",
+    "apiEndpoint": "https://generativelanguage.googleapis.com/v1beta/{model}:generateContent",
+    "useProxy": false,
+    "proxyUrl": "",
+    "apiKeyHint": "把你的 GEMINI API KEY 仅保存在浏览器 localStorage（见 README），或使用代理避免暴露 key"
+  },
+  "giscus": {
+    "enabled": false,
+    "repo": "OWNER/REPO",
+    "repoId": "REPO_ID",
+    "category": "Announcements",
+    "categoryId": "CATEGORY_ID",
+    "mapping": "pathname",
+    "reactionsEnabled": "1",
+    "emitMetadata": "0",
+    "inputPosition": "top",
+    "lang": "zh-CN"
+  },
+  "themes": [
+    {
+      "id": "auto",
+      "name": "跟随系统"
+    },
+    {
+      "id": "light",
+      "name": "浅色"
+    },
+    {
+      "id": "dark",
+      "name": "深色"
+    },
+    {
+      "id": "mist",
+      "name": "雾白"
+    },
+    {
+      "id": "graphite",
+      "name": "石墨"
+    }
+  ]
+}

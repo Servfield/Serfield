@@ -1,0 +1,49 @@
+<!doctype html><html lang="zh-CN"><head><title>留言板 · My Static Blog</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light dark" />
+<link rel="stylesheet" href="./assets/style.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='8' width='48' height='48' rx='14' fill='%23007aff'/%3E%3Cpath d='M22 40c7-3 13-8 20-18' stroke='white' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
+<meta name="description" content="游客留言与评论" /></head><body><div class="topbar"><div class="container"><div class="nav">
+<a class="brand" href="./index.html"><span class="logo"></span><span id="siteTitle">My Static Blog</span></a>
+<nav class="navlinks" id="navlinks"></nav><div class="spacer"></div>
+<div class="pill" title="Gemini 搜索/问答"><span class="badge">⌘</span>
+<input id="q" placeholder="用 Gemini 问点什么…" autocomplete="off" />
+<button class="btn primary" id="askGemini">问</button><button class="btn" id="openGemini">网页版</button></div>
+<select class="btn" id="themeSelect" aria-label="主题"></select></div></div></div>
+<div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true"><div class="modal">
+<header><b id="modalTitle">Modal</b><button class="btn" onclick="hideModal()">关闭</button></header>
+<div class="body"><pre class="pre" id="modalBody"></pre></div></div></div><section class="hero" style="padding-top:26px"><div class="container"><div class="grid" style="grid-template-columns:1fr">
+<div class="card"><h2>留言板</h2>
+<p class="sub">纯静态站点无法自建数据库。本方案推荐用 GitHub Discussions 的 <b>giscus</b>（或 Issues 的 utterances）实现“无需后端”的评论/留言。</p>
+<div id="comments" class="item" style="background:transparent; border:1px dashed var(--border)">
+  <div><b>未启用评论组件</b></div>
+  <div class="meta">在 site.config.json 填写 giscus 配置并设 enabled=true；详见 README。</div>
+</div></div></div></div></section>
+<script>
+(async ()=>{
+  const cfg=await (await fetch('./site.config.json',{cache:'no-store'})).json();
+  const g=cfg.giscus||{};
+  if(!g.enabled) return;
+  const s=document.createElement('script');
+  s.src='https://giscus.app/client.js';
+  s.async=true; s.crossOrigin='anonymous';
+  s.setAttribute('data-repo',g.repo);
+  s.setAttribute('data-repo-id',g.repoId);
+  s.setAttribute('data-category',g.category);
+  s.setAttribute('data-category-id',g.categoryId);
+  s.setAttribute('data-mapping',g.mapping||'pathname');
+  s.setAttribute('data-strict','0');
+  s.setAttribute('data-reactions-enabled',g.reactionsEnabled||'1');
+  s.setAttribute('data-emit-metadata',g.emitMetadata||'0');
+  s.setAttribute('data-input-position',g.inputPosition||'top');
+  s.setAttribute('data-lang',g.lang||'zh-CN');
+  const theme=document.documentElement.dataset.theme==='dark'?'transparent_dark':'light';
+  s.setAttribute('data-theme',theme);
+  const box=document.getElementById('comments'); box.innerHTML=''; box.appendChild(s);
+})();
+</script><div class="footer"><div class="container"><div class="row">
+<div>© <span id="year"></span> <span class="badge">静态 · 轻量</span></div><div class="meta">Built for GitHub Pages</div>
+</div></div></div>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script src="./assets/app.js" defer></script></body></html>
