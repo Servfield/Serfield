@@ -1,9 +1,0 @@
-{
-  "name": "你的博客标题",
-  "short_name": "Blog",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#0b1020",
-  "theme_color": "#7c3aed",
-  "icons": []
-}
